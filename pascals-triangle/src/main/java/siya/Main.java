@@ -1,5 +1,6 @@
 package siya;
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class Main {
 
@@ -18,6 +19,12 @@ public class Main {
         }
     }
 
+    public static void blankSpaces(int number) {
+        for (int i = 0; i < number; i++) {
+            System.out.print(" ");
+        }
+    }
+
     public static void triangleShape(int height) {
 
         for (int i = 1; i < height + 1; i++) {
@@ -27,9 +34,19 @@ public class Main {
         }
     }
 
-    public static void blankSpaces(int number) {
-        for (int i = 0; i < number; i++) {
-            System.out.print(" ");
+    // public static void pascalsTriangle(int height) {
+        
+    //     for (int i = 1; i < height + 1; i++) {
+    //         for (int i = 1; i < height; i++) {
+    //         }
+    //     }
+    // }
+
+    public static void legalIteration(ArrayList<Integer> number) {
+        // Come back here.
+        if (number.isEmpty()){
+            System.out.println("Empty list");
+            return;
         }
     }
 }
