@@ -33,11 +33,11 @@ public class MainTest {
         PrintStream content = System.out;
         System.setOut(new PrintStream(printedBlankSpaces));
 
-        mainMethods.blankSpaces(3);
+        mainMethods.blankSpacesOne(3);
         assertEquals("   ", printedBlankSpaces.toString());
 
         printedBlankSpaces.reset();
-        mainMethods.blankSpaces(0);
+        mainMethods.blankSpacesOne(0);
         assertEquals("", printedBlankSpaces.toString());
     }
 
