@@ -1,60 +1,72 @@
 package siya;
 
-import static org.junit.Assert.*;
-import org.junit.Test;
-import java.io.PrintStream;
+import static org.junit.Assert.assertEquals;
+
 import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+
+import org.junit.Test;
 
 public class MainTest {
 
     @Test
     public void starsTest() {
         
-        Main mainMethods = new Main(); 
+ 
 
         ByteArrayOutputStream printedStars = new ByteArrayOutputStream();
-        PrintStream content = System.out;
         System.setOut(new PrintStream(printedStars));
 
-        mainMethods.stars(5);
+        Main.stars(5);
         assertEquals("*****", printedStars.toString());
 
         printedStars.reset();
-        mainMethods.stars(3);
+        Main.stars(3);
         assertEquals("***", printedStars.toString());
     }
 
     @Test
     public void blankSpacesTest() {
         
-        Main mainMethods = new Main();
+
 
         ByteArrayOutputStream printedBlankSpaces = new ByteArrayOutputStream();
-        PrintStream content = System.out;
         System.setOut(new PrintStream(printedBlankSpaces));
 
-        mainMethods.blankSpacesOne(3);
+        Main.blankSpacesForTriangle(3);
         assertEquals("   ", printedBlankSpaces.toString());
 
         printedBlankSpaces.reset();
-        mainMethods.blankSpacesOne(0);
+        Main.blankSpacesForTriangle(0);
         assertEquals("", printedBlankSpaces.toString());
     }
 
 
     @Test
     public void triangleShapeTest() {
-        Main mainMethods = new Main();
+
         
         ByteArrayOutputStream printedTriangle = new ByteArrayOutputStream();
-        PrintStream content = System.out;
         System.setOut(new PrintStream(printedTriangle));
 
-        mainMethods.triangleShape(3);
+        Main.triangleShape(3);
         assertEquals("  *\n ***\n*****\n", printedTriangle.toString());
 
         printedTriangle.reset();
-        mainMethods.triangleShape(5);
+        Main.triangleShape(5);
         assertEquals("    *\n   ***\n  *****\n *******\n*********\n", printedTriangle.toString());
+    }
+
+    
+    @Test
+    public void pascalsTriangleTest() {
+
+
+        ByteArrayOutputStream printedPascalsTriangle = new ByteArrayOutputStream();
+        
+        System.setOut(new PrintStream(printedPascalsTriangle));
+
+        Main.pascalsTriangle(5);
+        assertEquals("           1\n         1   1\n       1   2   1\n     1   3   3   1\n   1   4   6   4   1\n 1   5   10   10   5   1\n", printedPascalsTriangle.toString());
     }
 }
