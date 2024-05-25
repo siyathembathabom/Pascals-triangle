@@ -108,7 +108,7 @@ public class Main {
                 if (j == 1) {
                     System.out.print(1 + "   ");
                 }
-                
+
                 // factorial method is used here.
                 a = factorial(i) / (factorial(j) * factorial(i - j));
                 if (j < i){
@@ -135,7 +135,7 @@ public class Main {
         String blank = "";
 
         // for loop for concatenating a blank space with the string variable blank.
-        // the loop is executed for n * 2 times.
+        // the loop is executed for n * 2 + 1 times.
         for (int i = 0; i < n * 2 + 1; i++) {
             blank += " ";
         }
