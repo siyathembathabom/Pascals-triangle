@@ -10,10 +10,19 @@ import org.junit.Test;
 public class MainTest {
 
     @Test
+    public void isNumberTest() {
+        String a = "1";
+        String b = "z";
+        String c = "12";
+
+        assertEquals(true, Main.isNumber(a));
+        assertEquals(false, Main.isNumber(b));
+        assertEquals(true, Main.isNumber(c));
+    }
+
+    @Test
     public void starsTest() {
         
- 
-
         ByteArrayOutputStream printedStars = new ByteArrayOutputStream();
         System.setOut(new PrintStream(printedStars));
 
@@ -28,8 +37,6 @@ public class MainTest {
     @Test
     public void blankSpacesTest() {
         
-
-
         ByteArrayOutputStream printedBlankSpaces = new ByteArrayOutputStream();
         System.setOut(new PrintStream(printedBlankSpaces));
 
@@ -39,13 +46,16 @@ public class MainTest {
         printedBlankSpaces.reset();
         Main.blankSpacesForTriangle(0);
         assertEquals("", printedBlankSpaces.toString());
+
+        
+        assertEquals(" ", Main.blankSpacesForPascals(0));
+        assertEquals("       ", Main.blankSpacesForPascals(3));
     }
 
 
     @Test
     public void triangleShapeTest() {
 
-        
         ByteArrayOutputStream printedTriangle = new ByteArrayOutputStream();
         System.setOut(new PrintStream(printedTriangle));
 
@@ -60,7 +70,6 @@ public class MainTest {
     
     @Test
     public void pascalsTriangleTest() {
-
 
         ByteArrayOutputStream printedPascalsTriangle = new ByteArrayOutputStream();
         
